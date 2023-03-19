@@ -13,3 +13,6 @@
 #### #06 - Numberz
 
 #### #07 - Smile in the mirror
+
+#### #08 - Hexadecimal
+

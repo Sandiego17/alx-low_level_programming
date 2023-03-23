@@ -2,46 +2,43 @@
 
 /**
  * print_times_table - Function that prints the `n` times table
- * Description: If `n` is greater than 15 or less than 0, print nothing.
- * @n: int type number
+ * Starting with 0
+ * @n: The value of the times table to be printed
  */
 
 void print_times_table(int n)
 {
-	int x = 0; /* factor */
-	int y; /* count  */
-	int z; /* computed value */
+	int num, mult, prod;
 
-	while (x < n)
+	if (n >= 0 && n <= 15)
 	{
-		y = 0;
-		while (y < n)
+		for (num = 0; num <= n; num++)
 		{
-			z = x * y;
-
-			if (z > n)
-			{
-				_putchar(z / 10 + '0');
-				_putchar(z % 10 + '0');
-			}
-			else if (y != 0)
-			{
-				_putchar(' ');
-				_putchar(z + '0');
-			}
-			else
-			{
-				_putchar(z + '0');
-			}
-
-			if (y != n)
+			_putchar('0');
+			for (mult = 1; mult <= n; mult++)
 			{
 				_putchar(',');
 				_putchar(' ');
+				prod = num * mult;
+
+				if (prod <= 99)
+					_putchar(' ');
+
+				if (prod <= 9)
+					_putchar(' ');
+
+				if (prod >= 100)
+				{
+					_putchar((prod / 100) + '0');
+					_putchar(((prod / 10)) % 10 + '0');
+				}
+				else if (prod <= 99 && prod >= 10)
+				{
+					_putchar((prod / 10) + '0');
+				}
+				_putchar((prod % 10) + '0');
 			}
-			y++;
+			_putchar('\n');
 		}
-		_putchar('\n');
-		x++;
 	}
 }

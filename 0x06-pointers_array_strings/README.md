@@ -1,4 +1,4 @@
-#### #00 - strcat
+#### #00 - strcat - function that concatenates two strings
 
 #### #01 - strncat
 
